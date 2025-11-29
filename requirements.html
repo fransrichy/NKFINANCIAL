@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Requirements - NANGHALI YA KAFITA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #13405c;
+            --primary-light: #2c7fb8;
+            --secondary: #e67e22;
+            --secondary-dark: #d35400;
+            --accent: #2ecc71;
+            --accent-dark: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --danger: #e74c3c;
+            --success: #27ae60;
+            --gold: #f1c40f;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-top {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .apply-btn {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Requirements Hero */
+        .requirements-hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.85), rgba(19, 64, 92, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .requirements-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .requirements-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Requirements Section */
+        .requirements-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .requirements-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .requirements-list {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .requirements-list h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .requirement-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .requirement-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .requirement-content h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .requirement-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Document Details Section */
+        .document-details {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .document-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .document-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .document-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .document-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .document-tip {
+            background-color: var(--light);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Before You Apply Section */
+        .before-apply {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .info-box {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .info-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .contact-info-footer {
+            list-style: none;
+        }
+
+        .contact-info-footer li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info-footer i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .sponsor-credit {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .sponsor-credit a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sponsor-credit a:hover {
+            color: var(--secondary);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .requirements-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .requirements-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .requirements-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .info-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/264818644104" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +264 81 864 4104</span>
+                    <span><i class="fas fa-envelope"></i> info@nkfinacials.com</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container header-main">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="images/header.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                </a>
+            </div>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loan-products.html">Loan Products</a></li>
+                    <li><a href="requirements.html" class="active">Requirements</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="loan-products.html" class="apply-btn">Apply Now</a>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Requirements Hero -->
+    <section class="requirements-hero">
+        <div class="container">
+            <h1>Loan Requirements</h1>
+            <p>Understanding our requirements ensures a smooth and fast loan application process. Make sure you have all necessary documents ready before applying.</p>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What You Need to Apply</h2>
+                <p>Prepare these documents and information to complete your loan application successfully</p>
+            </div>
+            <div class="requirements-container">
+                <div class="requirements-list">
+                    <h3>Required Documents Checklist</h3>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Valid ID / Passport</h4>
+                            <p>Government-issued identification document that is current and valid.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Latest Payslip</h4>
+                            <p>Your most recent payslip showing your income details.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Proof of Employment</h4>
+                            <p>Employment contract or letter from your employer confirming your employment status.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Bank Statements (1-3 months)</h4>
+                            <p>Recent bank statements to verify your financial activity and income deposits.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Contact Information</h4>
+                            <p>Current phone number and email address for communication.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Proof of Residence</h4>
+                            <p>Utility bill or rental agreement showing your current address (optional for some loans).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="requirements-list">
+                    <h3>Additional Information</h3>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Guarantor Information</h4>
+                            <p>Details of a guarantor may be required for certain loan products or higher amounts.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Bank Account Details</h4>
+                            <p>Your active bank account information for loan disbursement.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Recent Photograph</h4>
+                            <p>A recent passport-sized photograph for identification purposes.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-signature"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Signed Application Form</h4>
+                            <p>Completed and signed loan application form with all required information.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Income Verification</h4>
+                            <p>Additional documents may be required to verify your income sources.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h4>Credit Check Authorization</h4>
+                            <p>Consent for us to perform a credit check as part of the application process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Details Section -->
+    <section class="document-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Document Details & Requirements</h2>
+                <p>Understanding what we need and why helps ensure your application is processed quickly</p>
+            </div>
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Valid ID / Passport</h3>
+                    <p>Must be a government-issued identification that is current, valid, and clearly shows your photo and personal details.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: Ensure all details are clearly visible in your copy
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Latest Payslip</h3>
+                    <p>Should clearly show your name, employer details, income amount, and payment date. We need this to verify your income stability.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: Provide your 3 most recent payslips for better assessment
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Bank Statements</h3>
+                    <p>Recent statements (1-3 months) help us verify your income deposits, spending patterns, and financial stability.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: Ensure statements show your name and account number clearly
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Employment Proof</h3>
+                    <p>Employment contract, appointment letter, or recent letter from employer confirming your employment status and duration.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: Self-employed? Provide business registration and financial statements
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Proof of Residence</h3>
+                    <p>Utility bill (electricity, water), rental agreement, or municipal account not older than 3 months showing your current address.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: The document must be recent and show your name and address
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Guarantor Information</h3>
+                    <p>For certain loans, we may require a guarantor who meets our credit criteria and can provide similar documentation.</p>
+                    <div class="document-tip">
+                        <i class="fas fa-lightbulb"></i> Tip: Discuss with your potential guarantor before applying
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before You Apply Section -->
+    <section class="before-apply">
+        <div class="container">
+            <div class="info-box">
+                <h2>Before You Apply</h2>
+                <div class="info-items">
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Minimum age requirement: 18 years</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Minimum monthly income: N$ 3,000</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Namibian citizen or permanent resident</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Valid bank account in your name</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Stable employment (at least 3 months)</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Good credit history</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Application processing: 24-48 hours</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Loan repayment terms: 3-36 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Apply for Your Loan?</h2>
+                <p>Now that you know what's required, start your application process. We're here to help you get the financial support you need quickly and easily.</p>
+                <a href="loan-products.html" class="cta-btn">Apply for a Loan Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our loan requirements</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need a payslip to apply for a loan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, a recent payslip is required for employed applicants as it helps us verify your income and employment stability. For self-employed individuals, we require business registration documents and bank statements instead.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the approval process take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most applications are processed within 24-48 hours after we receive all required documents. Complete applications with all necessary documentation are processed faster.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the maximum loan amount I can apply for?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The maximum loan amount depends on your income, credit history, and the specific loan product. Personal loans range from N$ 5,000 to N$ 50,000, while SME loans can go up to N$ 200,000 for qualified applicants.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can self-employed people apply for loans?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, self-employed individuals can apply. Instead of payslips, we require business registration documents, 6 months of bank statements, and financial statements to assess your income stability.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I don't have all the required documents?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We require all listed documents to process your application. If you're missing any documents, please contact us to discuss possible alternatives before applying.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is a guarantor always required?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, a guarantor is not always required. It depends on the loan amount, your credit history, and the specific loan product. Our team will inform you if a guarantor is needed during the application process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <a href="../index.html">
+                            <img src="images/footer.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                        </a>
+                    </div>
+                    <p>NANGHALI YA KAFITA Financial Services CC is committed to providing accessible financial solutions to individuals and businesses in Namibia with transparency and integrity.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loan-products.html">Loan Products</a></li>
+                        <li><a href="requirements.html">Requirements</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Loan Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loan-products.html">Personal Loans</a></li>
+                        <li><a href="loan-products.html">Salary Advance</a></li>
+                        <li><a href="loan-products.html">Emergency Loans</a></li>
+                        <li><a href="loan-products.html">Short-Term Loans</a></li>
+                        <li><a href="loan-products.html">SME Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Windhoek, Namibia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+264 81 864 4104<br>+264 81 668 5688</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>lk2017015453@gmail.com<br>eembulo90@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 NANGHALI YA KAFITA Financial Services CC. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+                <p class="sponsor-credit">Website sponsored and developed by <a href="https://www.amateta.com" target="_blank">www.amateta.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+            
+            // FAQ Toggle Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all FAQ answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    
+                    // Open clicked FAQ if it wasn't active
+                    if (!isActive) {
+                        answer.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

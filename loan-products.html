@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Products - NANGHALI YA KAFITA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #13405c;
+            --primary-light: #2c7fb8;
+            --secondary: #e67e22;
+            --secondary-dark: #d35400;
+            --accent: #2ecc71;
+            --accent-dark: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --danger: #e74c3c;
+            --success: #27ae60;
+            --gold: #f1c40f;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-top {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .apply-btn {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Loan Products Hero */
+        .loan-hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.85), rgba(19, 64, 92, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loan-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .loan-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Loan Categories */
+        .loan-categories {
+            padding: 80px 0 40px;
+            background-color: white;
+        }
+
+        .categories-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            background-color: var(--light-gray);
+            border: 2px solid var(--light-gray);
+            color: var(--dark);
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-btn i {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .category-btn:hover i, .category-btn.active i {
+            color: white;
+        }
+
+        /* Loan Details Section */
+        .loan-details {
+            padding: 40px 0;
+            background-color: var(--light-gray);
+        }
+
+        .loan-details-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .loan-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .loan-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .loan-features {
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .feature-value {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .qualifications, .documents {
+            margin-bottom: 30px;
+        }
+
+        .qualifications h3, .documents h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .qualifications ul, .documents ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .qualifications li, .documents li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .qualifications li:before, .documents li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Mini Calculator */
+        .mini-calculator {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .mini-calculator h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .calculator-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .calculator-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .calculator-form .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+
+        .calculator-form .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
+        }
+
+        .calculator-results {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .calculator-results h4 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Application Form */
+        .application-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .application-form h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+
+        .form-group .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
+        }
+
+        .form-group textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* File Upload */
+        .file-upload {
+            margin-bottom: 25px;
+        }
+
+        .file-upload h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .upload-item {
+            margin-bottom: 15px;
+        }
+
+        .upload-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-input-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background-color: var(--light-gray);
+            border: 1px dashed var(--gray);
+            border-radius: 8px;
+            color: var(--gray);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .file-input-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .file-name {
+            margin-top: 5px;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Terms and Security */
+        .terms-security {
+            margin-bottom: 25px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            color: var(--dark);
+        }
+
+        .checkbox-group a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+
+        .security-question {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .security-question p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .submit-btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .success-message i {
+            font-size: 60px;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+
+        .success-message h2 {
+            color: var(--success);
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .reference-number {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .whatsapp-followup {
+            margin-top: 30px;
+        }
+
+        .whatsapp-followup a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .whatsapp-followup a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .contact-info-footer {
+            list-style: none;
+        }
+
+        .contact-info-footer li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info-footer i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .sponsor-credit {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .sponsor-credit a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sponsor-credit a:hover {
+            color: var(--secondary);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .loan-details-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .loan-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .loan-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/264818644104" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +264 81 864 4104</span>
+                    <span><i class="fas fa-envelope"></i> info@nkfinacials.com</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container header-main">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="images/header.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                </a>
+            </div>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loan-products.html" class="active">Loan Products</a></li>
+                    <li><a href="requirements.html">Requirements</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#application-form" class="apply-btn">Apply Now</a>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Loan Products Hero -->
+    <section class="loan-hero">
+        <div class="container">
+            <h1>Our Loan Products</h1>
+            <p>Find the perfect financial solution for your needs with our range of flexible loan options. Quick approval, competitive rates, and personalized service.</p>
+        </div>
+    </section>
+
+    <!-- Loan Categories -->
+    <section class="loan-categories">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Choose Your Loan Type</h2>
+                <p>Select a loan category to view details and apply</p>
+            </div>
+            <div class="categories-container">
+                <button class="category-btn active" data-loan="personal">
+                    <i class="fas fa-user"></i>
+                    Personal Loan
+                </button>
+                <button class="category-btn" data-loan="salary">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Salary Advance
+                </button>
+                <button class="category-btn" data-loan="emergency">
+                    <i class="fas fa-first-aid"></i>
+                    Emergency Loan
+                </button>
+                <button class="category-btn" data-loan="short-term">
+                    <i class="fas fa-calendar-week"></i>
+                    Short-Term Loan
+                </button>
+                <button class="category-btn" data-loan="sme">
+                    <i class="fas fa-building"></i>
+                    SME Loan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Details Section -->
+    <section class="loan-details">
+        <div class="container">
+            <div class="loan-details-container">
+                <div class="loan-info">
+                    <h2 id="loan-title">Personal Loan</h2>
+                    <div class="loan-features">
+                        <div class="feature-item">
+                            <span class="feature-label">Loan Amount</span>
+                            <span class="feature-value" id="loan-amount">N$ 5,000 - N$ 50,000</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Interest Rate</span>
+                            <span class="feature-value" id="interest-rate">40% per annum</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Repayment Period</span>
+                            <span class="feature-value" id="repayment-period">3 - 36 months</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Processing Fee</span>
+                            <span class="feature-value" id="processing-fee">2% of loan amount</span>
+                        </div>
+                    </div>
+                    
+                    <div class="qualifications">
+                        <h3>Qualifications</h3>
+                        <ul id="qualifications-list">
+                            <li>Namibian citizen or permanent resident</li>
+                            <li>18 years or older</li>
+                            <li>Stable source of income</li>
+                            <li>Valid ID document</li>
+                            <li>Bank account in your name</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="documents">
+                        <h3>Required Documents</h3>
+                        <ul id="documents-list">
+                            <li>ID/Passport copy</li>
+                            <li>Recent payslips (last 3 months)</li>
+                            <li>Bank statements (last 3 months)</li>
+                            <li>Proof of residence</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Mini Calculator -->
+                    <div class="mini-calculator">
+                        <h3>Loan Calculator</h3>
+                        <form class="calculator-form">
+                            <div class="form-group">
+                                <label for="calc-amount">Loan Amount (N$)</label>
+                                <input type="number" id="calc-amount" class="form-control" min="1000" max="50000" value="15000">
+                            </div>
+                            <div class="form-group">
+                                <label for="calc-interest">Interest Rate (%)</label>
+                                <input type="number" id="calc-interest" class="form-control" value="40" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="calc-term">Loan Term (Months)</label>
+                                <input type="number" id="calc-term" class="form-control" min="3" max="36" value="12">
+                            </div>
+                        </form>
+                        <div class="calculator-results">
+                            <h4>Your Loan Summary</h4>
+                            <div class="result-item">
+                                <span>Monthly Payment:</span>
+                                <span id="calc-monthly">N$ 1,666.67</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Interest:</span>
+                                <span id="calc-interest-total">N$ 5,000.04</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Payment:</span>
+                                <span id="calc-total">N$ 20,000.04</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Application Form -->
+                    <div class="application-form" id="application-form">
+                        <h2>Loan Application Form</h2>
+                        <form id="loan-application-form" action="submit-application.php" method="POST" enctype="multipart/form-data">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="full-name">Full Name</label>
+                                    <input type="text" id="full-name" name="full_name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id-number">ID/Passport Number</label>
+                                    <input type="text" id="id-number" name="id_number" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Physical Address</label>
+                                <input type="text" id="address" name="address" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="employment">Employment Status</label>
+                                    <select id="employment" name="employment" class="form-control" required>
+                                        <option value="">Select Employment Status</option>
+                                        <option value="employed">Employed</option>
+                                        <option value="self-employed">Self-Employed</option>
+                                        <option value="unemployed">Unemployed</option>
+                                        <option value="student">Student</option>
+                                        <option value="retired">Retired</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="income">Monthly Income (N$)</label>
+                                    <input type="number" id="income" name="income" class="form-control" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="loan-amount-request">Loan Amount Requested (N$)</label>
+                                    <input type="number" id="loan-amount-request" name="loan_amount" class="form-control" min="1000" max="50000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loan-type">Loan Type</label>
+                                    <input type="text" id="loan-type" name="loan_type" class="form-control" value="Personal Loan" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loan-reason">Reason for Loan (Optional)</label>
+                                <textarea id="loan-reason" name="loan_reason" class="form-control"></textarea>
+                            </div>
+                            
+                            <!-- File Upload Section -->
+                            <div class="file-upload">
+                                <h3>Required Documents</h3>
+                                
+                                <div class="upload-item">
+                                    <label for="id-copy">ID/Passport Copy</label>
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="id-copy" name="id_copy" accept=".pdf,.jpg,.jpeg,.png" required>
+                                        <div class="file-input-button">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Choose File</span>
+                                        </div>
+                                    </div>
+                                    <div class="file-name" id="id-copy-name">No file chosen</div>
+                                </div>
+                                
+                                <div class="upload-item">
+                                    <label for="payslip">Recent Payslip</label>
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="payslip" name="payslip" accept=".pdf,.jpg,.jpeg,.png" required>
+                                        <div class="file-input-button">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Choose File</span>
+                                        </div>
+                                    </div>
+                                    <div class="file-name" id="payslip-name">No file chosen</div>
+                                </div>
+                                
+                                <div class="upload-item">
+                                    <label for="bank-statement">Bank Statement (Last 3 months)</label>
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="bank-statement" name="bank_statement" accept=".pdf,.jpg,.jpeg,.png" required>
+                                        <div class="file-input-button">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Choose File</span>
+                                        </div>
+                                    </div>
+                                    <div class="file-name" id="bank-statement-name">No file chosen</div>
+                                </div>
+                                
+                                <div class="upload-item">
+                                    <label for="additional-docs">Additional Documents (Optional)</label>
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="additional-docs" name="additional_docs" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="file-input-button">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Choose File</span>
+                                        </div>
+                                    </div>
+                                    <div class="file-name" id="additional-docs-name">No file chosen</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Terms and Security -->
+                            <div class="terms-security">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="confirm-info" name="confirm_info" required>
+                                    <label for="confirm-info">I confirm that all information provided is accurate and complete</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="agree-terms" name="agree_terms" required>
+                                    <label for="agree-terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                                </div>
+                                
+                                <div class="security-question">
+                                    <p>Security Question: What is 5 + 3?</p>
+                                    <input type="number" id="security-answer" name="security_answer" class="form-control" placeholder="Enter the answer" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn" id="submit-button">Submit Application</button>
+                        </form>
+                        
+                        <!-- Success Message -->
+                        <div class="success-message" id="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <h2>Application Submitted Successfully!</h2>
+                            <p>Your loan application has been received and is being processed. We will contact you within 24 hours.</p>
+                            <div class="reference-number">
+                                Reference Number: <span id="reference-number">NYL-2023-001234</span>
+                            </div>
+                            <div class="whatsapp-followup">
+                                <a href="https://wa.me/264818644104" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Contact us on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our loan products</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What documents are required for a loan application?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You will need to provide a copy of your ID/Passport, recent payslips (last 3 months), bank statements (last 3 months), and proof of residence. Additional documents may be required depending on the loan type.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the approval process take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most applications are processed within 24-48 hours. We strive to provide quick decisions so you can access funds when you need them most.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Who qualifies for a loan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To qualify, you must be a Namibian citizen or permanent resident, 18 years or older, have a stable source of income, and meet our credit assessment criteria.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does repayment work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Repayments are made monthly through debit order from your bank account. You can choose a repayment period between 3 and 36 months depending on the loan type.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the maximum loan amount I can apply for?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The maximum loan amount depends on the loan type and your income. Personal loans range from N$ 5,000 to N$ 50,000, while SME loans can go up to N$ 200,000 for qualified applicants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <a href="../index.html">
+                            <img src="images/footer.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                        </a>
+                    </div>
+                    <p>NANGHALI YA KAFITA Financial Services CC is committed to providing accessible financial solutions to individuals and businesses in Namibia with transparency and integrity.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loan-products.html">Loan Products</a></li>
+                        <li><a href="requirements.html">Requirements</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Loan Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loan-products.html">Personal Loans</a></li>
+                        <li><a href="loan-products.html">Salary Advance</a></li>
+                        <li><a href="loan-products.html">Emergency Loans</a></li>
+                        <li><a href="loan-products.html">Short-Term Loans</a></li>
+                        <li><a href="loan-products.html">SME Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Windhoek, Namibia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+264 81 864 4104<br>+264 81 668 5688</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>lk2017015453@gmail.com<br>eembulo90@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 NANGHALI YA KAFITA Financial Services CC. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+                <p class="sponsor-credit">Website sponsored and developed by <a href="https://www.amateta.com" target="_blank">www.amateta.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loan Categories Selection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+            
+            // Loan category buttons
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const loanTitle = document.getElementById('loan-title');
+            const loanAmount = document.getElementById('loan-amount');
+            const interestRate = document.getElementById('interest-rate');
+            const repaymentPeriod = document.getElementById('repayment-period');
+            const processingFee = document.getElementById('processing-fee');
+            const qualificationsList = document.getElementById('qualifications-list');
+            const documentsList = document.getElementById('documents-list');
+            const loanTypeField = document.getElementById('loan-type');
+            
+            // Loan data
+            const loanData = {
+                personal: {
+                    title: 'Personal Loan',
+                    amount: 'N$ 5,000 - N$ 50,000',
+                    interest: '40% per annum',
+                    period: '3 - 36 months',
+                    fee: '2% of loan amount',
+                    qualifications: [
+                        'Namibian citizen or permanent resident',
+                        '18 years or older',
+                        'Stable source of income',
+                        'Valid ID document',
+                        'Bank account in your name'
+                    ],
+                    documents: [
+                        'ID/Passport copy',
+                        'Recent payslips (last 3 months)',
+                        'Bank statements (last 3 months)',
+                        'Proof of residence'
+                    ]
+                },
+                salary: {
+                    title: 'Salary Advance',
+                    amount: 'N$ 1,000 - N$ 10,000',
+                    interest: '35% per annum',
+                    period: '1 - 3 months',
+                    fee: '1.5% of loan amount',
+                    qualifications: [
+                        'Employed with consistent salary',
+                        'Salary paid into bank account',
+                        'Valid employment contract',
+                        'Valid ID document',
+                        'Bank account in your name'
+                    ],
+                    documents: [
+                        'ID/Passport copy',
+                        'Recent payslips (last 3 months)',
+                        'Employment contract',
+                        'Bank statements (last 3 months)'
+                    ]
+                },
+                emergency: {
+                    title: 'Emergency Loan',
+                    amount: 'N$ 2,000 - N$ 20,000',
+                    interest: '45% per annum',
+                    period: '3 - 12 months',
+                    fee: '2.5% of loan amount',
+                    qualifications: [
+                        'Namibian citizen or permanent resident',
+                        '18 years or older',
+                        'Proof of emergency situation',
+                        'Valid ID document',
+                        'Bank account in your name'
+                    ],
+                    documents: [
+                        'ID/Passport copy',
+                        'Proof of emergency (medical bills, etc.)',
+                        'Bank statements (last 3 months)',
+                        'Proof of residence'
+                    ]
+                },
+                'short-term': {
+                    title: 'Short-Term Loan',
+                    amount: 'N$ 3,000 - N$ 25,000',
+                    interest: '38% per annum',
+                    period: '3 - 12 months',
+                    fee: '2% of loan amount',
+                    qualifications: [
+                        'Namibian citizen or permanent resident',
+                        '18 years or older',
+                        'Stable source of income',
+                        'Valid ID document',
+                        'Bank account in your name'
+                    ],
+                    documents: [
+                        'ID/Passport copy',
+                        'Recent payslips (last 3 months)',
+                        'Bank statements (last 3 months)',
+                        'Proof of residence'
+                    ]
+                },
+                sme: {
+                    title: 'SME Loan',
+                    amount: 'N$ 10,000 - N$ 200,000',
+                    interest: '30% per annum',
+                    period: '6 - 36 months',
+                    fee: '3% of loan amount',
+                    qualifications: [
+                        'Registered business in Namibia',
+                        'Business operational for at least 1 year',
+                        'Business bank account',
+                        'Valid business registration documents',
+                        'Financial statements (last 2 years)'
+                    ],
+                    documents: [
+                        'Business registration documents',
+                        'ID/Passport copies of directors',
+                        'Financial statements (last 2 years)',
+                        'Business bank statements (last 6 months)',
+                        'Business plan (for new ventures)'
+                    ]
+                }
+            };
+            
+            // Function to update loan details
+            function updateLoanDetails(loanType) {
+                const data = loanData[loanType];
+                
+                loanTitle.textContent = data.title;
+                loanAmount.textContent = data.amount;
+                interestRate.textContent = data.interest;
+                repaymentPeriod.textContent = data.period;
+                processingFee.textContent = data.fee;
+                loanTypeField.value = data.title;
+                
+                // Update qualifications
+                qualificationsList.innerHTML = '';
+                data.qualifications.forEach(qualification => {
+                    const li = document.createElement('li');
+                    li.textContent = qualification;
+                    qualificationsList.appendChild(li);
+                });
+                
+                // Update documents
+                documentsList.innerHTML = '';
+                data.documents.forEach(document => {
+                    const li = document.createElement('li');
+                    li.textContent = document;
+                    documentsList.appendChild(li);
+                });
+            }
+            
+            // Add event listeners to category buttons
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Update loan details
+                    const loanType = this.getAttribute('data-loan');
+                    updateLoanDetails(loanType);
+                    
+                    // Update calculator interest rate based on loan type
+                    const interestRates = {
+                        personal: 40,
+                        salary: 35,
+                        emergency: 45,
+                        'short-term': 38,
+                        sme: 30
+                    };
+                    
+                    document.getElementById('calc-interest').value = interestRates[loanType];
+                    calculateLoan();
+                });
+            });
+            
+            // Loan Calculator Functionality
+            const calcAmount = document.getElementById('calc-amount');
+            const calcInterest = document.getElementById('calc-interest');
+            const calcTerm = document.getElementById('calc-term');
+            const calcMonthly = document.getElementById('calc-monthly');
+            const calcInterestTotal = document.getElementById('calc-interest-total');
+            const calcTotal = document.getElementById('calc-total');
+            
+            // Format currency
+            function formatCurrency(amount) {
+                return 'N$ ' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+            
+            // Calculate loan
+            function calculateLoan() {
+                const principal = parseFloat(calcAmount.value);
+                const rate = parseFloat(calcInterest.value) / 100 / 12; // Monthly interest rate
+                const term = parseFloat(calcTerm.value);
+                
+                // Calculate monthly payment
+                const x = Math.pow(1 + rate, term);
+                const monthly = (principal * x * rate) / (x - 1);
+                
+                // Calculate totals
+                const totalPayment = monthly * term;
+                const totalInterest = totalPayment - principal;
+                
+                // Update display values
+                calcMonthly.textContent = formatCurrency(monthly);
+                calcInterestTotal.textContent = formatCurrency(totalInterest);
+                calcTotal.textContent = formatCurrency(totalPayment);
+            }
+            
+            // Initialize calculator
+            calculateLoan();
+            
+            // Add event listeners to calculator inputs
+            calcAmount.addEventListener('input', calculateLoan);
+            calcTerm.addEventListener('input', calculateLoan);
+            
+            // File Upload Functionality
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            
+            fileInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+                    const fileDisplay = document.getElementById(this.id + '-name');
+                    fileDisplay.textContent = fileName;
+                });
+            });
+            
+            // FAQ Toggle Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all FAQ answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    
+                    // Open clicked FAQ if it wasn't active
+                    if (!isActive) {
+                        answer.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Form Submission
+            const loanForm = document.getElementById('loan-application-form');
+            const successMessage = document.getElementById('success-message');
+            const submitBtn = document.getElementById('submit-button');
+            
+            loanForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple security question validation
+                const securityAnswer = document.getElementById('security-answer').value;
+                if (parseInt(securityAnswer) !== 8) {
+                    alert('Please answer the security question correctly.');
+                    return;
+                }
+                
+                // Show loading state
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+                
+                // Create FormData object
+                const formData = new FormData(loanForm);
+                
+                // Send form data to server
+                fetch('submit-application.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update reference number with actual one from server
+                        document.getElementById('reference-number').textContent = data.reference_number;
+                        
+                        // Hide form and show success message
+                        loanForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        alert('Error: ' + data.message);
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting your application. Please try again.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

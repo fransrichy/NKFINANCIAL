@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANGHALI YA KAFITA - Fast & Affordable Cash Loans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #13405c;
+            --primary-light: #2c7fb8;
+            --secondary: #e67e22;
+            --secondary-dark: #d35400;
+            --accent: #2ecc71;
+            --accent-dark: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --danger: #e74c3c;
+            --success: #27ae60;
+            --gold: #f1c40f;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-top {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 15px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px; /* Increased logo size */
+            border-radius: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .apply-btn {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.85), rgba(19, 64, 92, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, var(--light) 50%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, var(--primary-light), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--secondary);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        /* Calculator Section */
+        .calculator {
+            padding: 100px 0;
+            background: linear-gradient(to bottom right, var(--light-gray), white);
+            position: relative;
+        }
+
+        .calculator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom left, transparent 49%, var(--light-gray) 50%);
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .calculator-content {
+            padding-right: 30px;
+        }
+
+        .calculator-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .calculator-content p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .calculator-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .calculator-form::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            z-index: -1;
+            border-radius: 20px;
+            opacity: 0.1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
+        }
+
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .range-value {
+            min-width: 100px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--light-gray);
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--secondary);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: var(--secondary-dark);
+            transform: scale(1.1);
+        }
+
+        .calculator-results {
+            background: linear-gradient(to bottom right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-results::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+
+        .calculator-results h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .badge {
+            text-align: center;
+            max-width: 200px;
+            transition: var(--transition);
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge i {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .badge:hover i {
+            color: var(--secondary);
+        }
+
+        .badge h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .badge p {
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .contact-info-footer {
+            list-style: none;
+        }
+
+        .contact-info-footer li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info-footer i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 80px; /* Larger logo in footer */
+        }
+
+        .sponsor-credit {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .sponsor-credit a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sponsor-credit a:hover {
+            color: var(--secondary);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-content {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .calculator-content h2 {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/264818644104" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +264 81 864 4104</span>
+                    <span><i class="fas fa-envelope"></i> info@nkfinacials.com</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container header-main">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="images/header.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                </a>
+            </div>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="loan-products.html">Loan Products</a></li>
+                    <li><a href="requirements.html">Requirements</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="loan-products.html" class="apply-btn">Apply Now</a>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Fast & Affordable Cash Loans</h2>
+            <p>Get the financial support you need with our quick and easy loan application process. Competitive 40% interest rate and flexible repayment options tailored to your needs.</p>
+            <div class="hero-btns">
+                <a href="loan-products.html" class="btn btn-primary">Apply Now</a>
+                <a href="#calculator" class="btn btn-secondary">Calculate Your Loan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Loan Services</h2>
+                <p>We provide financial solutions that are tailored to meet your specific needs with transparency and reliability</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Quick Approval</h3>
+                    <p>Get your loan approved within hours, not days. Our streamlined process ensures fast access to funds when you need them most.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>40% Fixed Interest</h3>
+                    <p>Transparent 40% fixed interest rate with no hidden fees. Know exactly what you'll pay from day one.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Confidential</h3>
+                    <p>Your personal and financial information is protected with bank-level security measures and strict confidentiality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Flexible Repayment</h3>
+                    <p>Choose repayment terms from 3 to 36 months that work with your budget and financial situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator section-padding">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-content">
+                    <h2>Loan Calculator</h2>
+                    <p>Estimate your monthly payments and total loan cost with our easy-to-use calculator. Adjust the sliders to see how different loan amounts and terms affect your repayments.</p>
+                    <div class="feature-card" style="max-width: 300px; margin: 0 auto; padding: 20px;">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>40% Interest Rate</h3>
+                        <p>Our fixed rate ensures predictable payments throughout your loan term.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount (N$)</label>
+                            <div class="range-container">
+                                <input type="range" id="loanAmount" class="form-control" min="1000" max="50000" value="15000" step="1000">
+                                <span class="range-value" id="loanAmountValue">N$ 15,000</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <div class="range-container">
+                                <input type="range" id="interestRate" class="form-control" min="5" max="40" value="40" step="0.5" disabled>
+                                <span class="range-value" id="interestRateValue">40%</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term (Months)</label>
+                            <div class="range-container">
+                                <input type="range" id="loanTerm" class="form-control" min="3" max="36" value="12" step="1">
+                                <span class="range-value" id="loanTermValue">12 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-results">
+                        <h3>Your Loan Summary</h3>
+                        <div class="result-item">
+                            <span>Loan Amount:</span>
+                            <span id="resultAmount">N$ 15,000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Interest Rate:</span>
+                            <span id="resultRate">40%</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Loan Term:</span>
+                            <span id="resultTerm">12 Months</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Monthly Payment:</span>
+                            <span id="resultMonthly">N$ 1,666.67</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Interest:</span>
+                            <span id="resultInterest">N$ 5,000.04</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Payment:</span>
+                            <span id="resultTotal">N$ 20,000.04</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Clients Trust Us</h2>
+                <p>We're committed to providing exceptional service with integrity and transparency</p>
+            </div>
+            <div class="badges-container">
+                <div class="badge">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Application</h3>
+                    <p>Your data is protected with 256-bit encryption</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Fast Approval</h3>
+                    <p>90% of applications approved within 24 hours</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-star"></i>
+                    <h3>Trusted Service</h3>
+                    <p>Rated 4.8/5 by over 500 customers</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>We're here to help anytime you need us</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container cta-content">
+            <h2>Ready to Get Your Loan?</h2>
+            <p>Don't wait any longer. Apply now and get the financial support you need with our simple and fast process.</p>
+            <a href="loan-products.html" class="btn btn-primary">Apply For a Loan Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <a href="../index.html">
+                            <img src="images/footer.png" alt="NANGHALI YA KAFITA Logo" class="logo-image">
+                        </a>
+                    </div>
+                    <p>NANGHALI YA KAFITA Financial Services CC is committed to providing accessible financial solutions to individuals and businesses in Namibia with transparency and integrity.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="loan-products.html">Loan Products</a></li>
+                        <li><a href="requirements.html">Requirements</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Loan Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loan-products.html">Personal Loans</a></li>
+                        <li><a href="loan-products.html">Salary Advance</a></li>
+                        <li><a href="loan-products.html">Emergency Loans</a></li>
+                        <li><a href="loan-products.html">Short-Term Loans</a></li>
+                        <li><a href="loan-products.html">SME Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Windhoek, Namibia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+264 81 864 4104<br>+264 81 668 5688</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>lk2017015453@gmail.com<br>eembulo90@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 NANGHALI YA KAFITA Financial Services CC. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+                <p class="sponsor-credit">Website sponsored and developed by <a href="https://www.amateta.com" target="_blank">www.amateta.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loan Calculator Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default interest rate to 40%
+            const interestRate = document.getElementById('interestRate');
+            interestRate.value = 40;
+            
+            // Mobile menu functionality
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+            
+            // Loan Calculator Elements
+            const loanAmount = document.getElementById('loanAmount');
+            const loanTerm = document.getElementById('loanTerm');
+            
+            const loanAmountValue = document.getElementById('loanAmountValue');
+            const interestRateValue = document.getElementById('interestRateValue');
+            const loanTermValue = document.getElementById('loanTermValue');
+            
+            const resultAmount = document.getElementById('resultAmount');
+            const resultRate = document.getElementById('resultRate');
+            const resultTerm = document.getElementById('resultTerm');
+            const resultMonthly = document.getElementById('resultMonthly');
+            const resultInterest = document.getElementById('resultInterest');
+            const resultTotal = document.getElementById('resultTotal');
+            
+            // Format currency
+            function formatCurrency(amount) {
+                return 'N$ ' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+            
+            // Format number with commas
+            function formatNumber(number) {
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            // Calculate loan with 40% interest rate
+            function calculateLoan() {
+                const principal = parseFloat(loanAmount.value);
+                const rate = 0.40 / 12; // 40% annual interest converted to monthly
+                const term = parseFloat(loanTerm.value);
+                
+                // Calculate monthly payment
+                const x = Math.pow(1 + rate, term);
+                const monthly = (principal * x * rate) / (x - 1);
+                
+                // Calculate totals
+                const totalPayment = monthly * term;
+                const totalInterest = totalPayment - principal;
+                
+                // Update display values
+                loanAmountValue.textContent = 'N$ ' + formatNumber(principal);
+                interestRateValue.textContent = '40%';
+                loanTermValue.textContent = term + ' Months';
+                
+                resultAmount.textContent = 'N$ ' + formatNumber(principal);
+                resultRate.textContent = '40%';
+                resultTerm.textContent = term + ' Months';
+                resultMonthly.textContent = formatCurrency(monthly);
+                resultInterest.textContent = formatCurrency(totalInterest);
+                resultTotal.textContent = formatCurrency(totalPayment);
+            }
+            
+            // Initialize calculator
+            calculateLoan();
+            
+            // Add event listeners
+            loanAmount.addEventListener('input', calculateLoan);
+            loanTerm.addEventListener('input', calculateLoan);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
